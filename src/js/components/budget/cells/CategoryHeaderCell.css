@@ -1,0 +1,32 @@
+.category-header-cell {
+    
+}
+
+.cell-title {
+    display: inline-block;
+}
+
+.cell-button {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.cell-options {
+    float: right;
+    margin-right: 2px;
+    cursor: pointer;
+}
+
+.cell-menu {
+    position: absolute;
+    background-color: white;
+    list-style: none;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}

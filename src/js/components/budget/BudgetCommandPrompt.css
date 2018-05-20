@@ -1,0 +1,18 @@
+.budget-command-prompt {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.budget-command-prompt input {
+    margin-left: 5px;
+    width: auto;
+}
+
+.budget-command-prompt textarea {
+    float: left;
+    width: calc(100% - 6px);
+    height: 10rem;
+    margin: 0;
+}

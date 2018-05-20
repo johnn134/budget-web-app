@@ -1,0 +1,19 @@
+.cell {
+
+}
+
+.number-cell {
+    text-align: right;
+}
+
+.table-element .number-cell {
+    font-size: 0.85rem;
+}
+
+.string-cell {
+
+}
+
+.table-cell {
+    text-align: right;
+}
