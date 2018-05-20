@@ -1,0 +1,28 @@
+.app-menu {
+    width: 100%;
+    height: 32px;
+    background-color: black;
+}
+
+.app-menu .menu-links {
+    display: table;
+    text-align: center;
+    height: 100%;
+}
+
+.app-menu a {
+    display: table-cell;
+    vertical-align: middle;
+    color: #fff;
+    text-decoration: none;
+    height: 100%;
+    width: 75px;
+}
+
+.app-menu a:hover {
+    background-color: #444;
+}
+
+.app-menu .active-link {
+    background-color: #333;
+}

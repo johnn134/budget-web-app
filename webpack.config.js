@@ -2,6 +2,7 @@ var webpack = require('webpack');
 var path = require('path');
 
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 var OpenBrowserPlugin = require('open-browser-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
@@ -14,6 +15,7 @@ const PORT = 8080;
 
 var config = {
     entry: ENTRY_PATH,
+    devtool: 'source-map',
     plugins: [
         new CopyWebpackPlugin([
             {
@@ -25,6 +27,7 @@ var config = {
             inject: 'body',
             template: TEMPLATE_PATH
         }),
+        new ExtractTextPlugin('css/styles.css'),
         new OpenBrowserPlugin({
             url: `http://localhost:${PORT}/`
         }),
@@ -32,10 +35,14 @@ var config = {
     ],
     output: {
         path: BUILD_PATH,
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: '/'
+    },
+    devServer: {
+        historyApiFallback: true
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.glsl']
+        extensions: ['.js', '.jsx']
     },
     module: {
         loaders: [
@@ -45,13 +52,19 @@ var config = {
                 loader: 'babel-loader',
                 query: {
                     cacheDirectory: true,
-                    presets: ['es2015']
+                    presets: ['babel-preset-env', 'babel-preset-react', 'babel-preset-stage-2']
                 }
             },
             {
                 test: /\.jsx?/,
                 exclude: /node_modules/,
                 loader: 'babel-loader'
+            },
+            {
+                test: /\.css?$/,
+                use: ExtractTextPlugin.extract({
+                    use: 'css-loader'
+                })
             },
             {
                 test: /\.png$/,

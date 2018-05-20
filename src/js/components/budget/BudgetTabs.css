@@ -1,0 +1,28 @@
+.budget-tabs-container {
+    width: 100%;
+    height: 32px;
+    background-color: #888;
+}
+
+.budget-tabs {
+    display: table;
+    text-align: center;
+    height: 100%;
+}
+
+.budget-tabs a {
+    display: table-cell;
+    vertical-align: middle;
+    color: #fff;
+    text-decoration: none;
+    height: 100%;
+    width: 75px;
+}
+
+.budget-tabs a:hover {
+    background-color: #aaa;
+}
+
+.budget-tabs .active-tab {
+    background-color: #999;
+}
